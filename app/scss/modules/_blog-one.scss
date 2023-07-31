@@ -1,0 +1,217 @@
+.blog-one {
+   &__text {
+      border: 1px solid #ececec;
+      border-top: none;
+      padding: 30px;
+      margin-top: -1px;
+
+      @include r($r-tm) {
+         padding: 20px 10px;
+      }
+
+      h4 {
+         color: $title;
+         font-size: 22px;
+         @extend %roboto-500;
+         margin: 25px 0;
+      }
+   
+      p {
+         margin: 25px 0;
+         flex: 16px;
+         line-height: 1.625;
+      }
+   
+      blockquote {
+         background-color: $bg;
+         border-left: 3px solid $accent;
+         color: $title;
+         @extend %roboto-400;
+         font-size: 22px;
+         margin: 25px 0;
+         padding: 35px;
+
+         @include r($r-ph) {
+            padding: 10px;
+         }
+      }
+   }
+
+   &__left-img {
+      float: left;
+      margin-right: 30px;
+      margin-bottom: 10px;
+
+      @include r($r-ph) {
+         float: none;
+         margin-right: 0;
+         width: 100%;
+         height: 200px;
+         object-fit: cover;
+      }
+   }
+
+   &__right-img {
+      float: right;
+      margin-left: 30px;
+      margin-bottom: 10px;
+   }
+
+   &__info {
+      display: flex;
+      margin-bottom: 25px;
+
+      @include r($r-ph) {
+         display: block;
+      }
+   }
+
+   &__info-link {
+      margin-right: 30px;
+      padding-left: 28px;
+      position: relative;
+
+      @include r($r-ph) {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      &::before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 2px;
+         width: 16px;
+         height: 16px;
+         background-image: url("../images/icons/calendar.svg");
+      }
+   }
+
+   &__info-link--comment::before {
+      background-image: url("../images/icons/comment.svg");
+      top: 2px;
+   }
+   
+   &__info-link--author::before {
+      background-image: url("../images/icons/user-blog.svg");
+   }
+
+   &__form-title {
+      text-transform: uppercase;
+      margin: 35px 0 25px;
+      color: $title;
+      font-size: 24px;
+      @extend %roboto-700;
+   }
+
+   &__box {
+      margin: 25px 0 35px;
+      display: flex;
+      justify-content: space-between;
+
+      @include r($r-tm) {
+         flex-wrap: wrap;
+      }
+
+      @include r($r-ph) {
+         display: block;
+      }
+   }
+
+   &__tags,
+   &__share {
+      span {
+         text-transform: uppercase;
+         color: $title;
+         @extend %quicksand-500;
+         padding-right: 5px;
+      }
+   }
+
+   &__tags {
+      margin-right: 10px;
+      margin-bottom: 10px;
+   }
+
+   &__share {
+      a {
+         margin-right: 12px;
+         vertical-align: middle;
+      }
+      svg {
+         width: 17px;
+         height: 17px;
+         fill: $default;
+         transition: all .3s;
+      }
+      :hover {
+         svg {
+         fill: $accent;
+         }
+      }
+   }
+
+   &__author {
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      display: flex;
+   }
+
+   &__author-img {
+      width: 140px;
+      height: 140px;
+      margin-right: 30px;
+      object-fit: cover;
+
+      @include r($r-ph) {
+         display: none;
+      }
+   }
+
+   &__author-name {
+      font-size: 22px;
+      @extend %roboto-500;
+      margin-bottom: 24px;
+      color: $title;
+   }
+
+   .comments-form {
+      border-bottom: none;
+   
+      &__box-input {
+         @include r($r-tm) {
+            display: block;
+            margin-bottom: 0;
+         }
+      }
+      
+      &__text-input {
+         &:not(:last-child) {
+            margin-right: 10px;
+         }
+         @include r($r-tm) {
+            margin-bottom: 30px;
+            max-width: 100%;
+         }
+      }
+   }
+   .comments {
+      &__img {
+         @include r($r-ph) {
+            display: none;
+         }
+      }
+   }
+}
+
+
+.comments-title {
+   font-size: 24px;
+   @extend %roboto-700;
+   margin-bottom: 25px;
+   color: $title;
+   text-transform: uppercase;
+}
+
+

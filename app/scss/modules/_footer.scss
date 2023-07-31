@@ -1,0 +1,183 @@
+.footer {
+  background-color: $bg;
+}
+
+.footer-top {
+  padding: 70px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+
+  @include r($r-dt) {
+    flex-wrap: wrap;
+  }
+
+  &__contact {
+    width: 250px;
+    margin-right: 50px;
+
+    @include r($r-tm) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    width: 170px;
+    margin-right: 30px;
+
+    @include r($r-tm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item-form {
+    max-width: 470px;
+
+    @include r($r-dt) {
+      max-width: 100%;
+      padding-top: 30px;
+    }
+
+    @include r($r-ph) {
+      padding-top: 0;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 33px;
+    display: block;
+  }
+
+  &__address,
+  &__email,
+  &__phone {
+    display: block;
+    margin-bottom: 14px;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+  }
+
+  &__social-item {
+    &:not(:last-child) {
+      padding-right: 18px;
+    }
+  }
+
+  &__social-link {
+    svg {
+      transition: all 0.3s;
+      height: 16px;
+      width: 18px;
+      fill: $default;
+
+      &:hover {
+        fill: $accent;
+      }
+    }
+  }
+
+  &__title {
+    color: $title;
+    @extend %roboto-500;
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1;
+    pointer-events: none;
+
+    @include r($r-ph) {
+      pointer-events: all;
+    }
+  }
+
+  &__link {
+    margin-bottom: 14px;
+    display: block;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__text {
+    margin-bottom: 25px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+
+    @include r($r-ph) {
+      flex-wrap: wrap;
+    }
+
+  }
+
+  &__form-input {
+    background-color: #fff;
+    max-width: 320px;
+    width: 100%;
+    border: none;
+    padding: 12px 10px 12px 15px;
+    box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+    margin-right: 10px;
+
+    &::placeholder {
+      color: $default;
+      font-size: 16px;
+    }
+
+    @include r($r-ph) {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__form-btn {
+    @extend %btn;
+
+    @include r($r-ph) {
+      width: 100%;
+    }
+  }
+}
+
+.footer-bottom {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+
+  @include r($r-tm) {
+    justify-content: center;
+  }
+
+  &__copy {
+    @include r($r-tm) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__accept-img {
+    display: inline;
+    margin-left: 25px;
+    vertical-align: middle;
+
+    @include r($r-ph) {
+      margin-left: 15px;
+    }
+  }
+}

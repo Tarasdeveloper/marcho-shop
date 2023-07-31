@@ -1,0 +1,128 @@
+.top-slider {
+  background-image: url("../images/decor/top-slider-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $bg;
+  padding: 65px 0 45px;
+
+  @include r($r-ph) {
+    padding: 45px 0 30px;
+  }
+
+  &__container {
+    max-width: 1520px;
+  }
+
+  &__img {
+    @include r($r-dt) {
+      width: 40%;
+      object-fit: contain;
+    }
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+
+    .top-slider__img {
+      @include r($r-tb) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 155px;
+    padding-top: 125px;
+
+    @include r($r-dt) {
+      padding-left: 15px;
+      padding-top: 40px;
+    }
+
+    @include r($r-tb) {
+      padding-top: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 1.17;
+    color: $title;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+
+    @include r($r-tm) {
+      font-size: 44px;
+      margin-bottom: 25px;
+    }
+
+    @include r($r-ph) {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    max-width: 470px;
+    margin-bottom: 55px;
+
+    @include r($r-ph) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+
+    @include r($r-tb) {
+      margin-top: 0;
+    }
+
+    li {
+      padding: 0 5px;
+      line-height: 0;
+      button {
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.slick-active {
+        button {
+          border-color: $accent;
+
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+}

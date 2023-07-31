@@ -1,0 +1,170 @@
+.header {
+  padding: 40px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include r($r-dt) {
+      padding-right: 10px;
+    
+    }
+    @include r($r-ph) {
+      padding-right: 0;
+    }
+  }
+}
+
+.menu {
+  @include r($r-tb) {
+    order: 1;
+    margin-left: 40px;
+    display: flex;
+  }
+
+  @include r($r-ph) {
+    order: 0;
+  }
+
+  &__list {
+    display: flex;
+
+    @include r($r-tb) {
+      transform: translateY(-200%);
+      position: absolute;
+      top: 120px;
+      width: 100%;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+      transition: all .3s ease-in-out;
+      background-color: #fff;
+    }
+
+    @include r($r-ph) {
+      top: 140px;
+    }
+
+    
+    &.menu__list--active {
+      transform: translateY(0);
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &__btn {
+    width: 30px;
+    height: 21px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: none;
+
+    @include r($r-tb) {
+      display: flex;
+    }
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: $title;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $title;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      padding-right: 35px;
+      
+      @include r($r-tb) {
+        padding-right: 15px;
+      }
+    }
+
+    @include r($r-tb) {
+      width: 100%;
+      padding: 0 15px;
+      text-align: center;
+    }
+  }
+
+  &__list-link {
+    color: $title;
+    padding: 0 2px 1px;
+    transition: all 0.3s;
+    @extend %roboto-400;
+
+    @include r($r-tb) {
+      padding: 12px 0;
+      display: block;
+    }
+
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  @include r($r-tb) {
+    margin-left: auto;
+  }
+
+  @include r($r-ph) {
+    width: 100%;
+    margin-top: 35px;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
+
+  &__link {
+    position: relative;
+  }
+
+  &__link + .user-nav__link {
+    padding-left: 25px;
+  }
+
+  &__num {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -9px;
+    right: -14px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+  }
+}
