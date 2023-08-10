@@ -1,0 +1,25 @@
+@include('components/_head.html', {"pageTitle": "Shop"})
+
+@include('components/_header.html')
+
+<main class="main">
+
+  @include('components/_top.html', {"pageTitle": "Shop page"})
+
+  <section class="shop">
+    <div class="container">
+      <div class="shop__inner">
+
+        @include('components/_shop-filters.html')
+
+        @include('components/_shop-content.html')
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')
