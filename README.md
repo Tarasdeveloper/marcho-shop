@@ -2,4 +2,4 @@
 
 Made with: html, scss, JS, jQuery, gulp, fileinclude
 
-Contains multipage design, slider, range-slider, pagination, custom checkboxes, videoplayer
+Contains multipage design, slider, range-slider, pagination, custom checkboxes, fancybox-player, rateyo-rating
